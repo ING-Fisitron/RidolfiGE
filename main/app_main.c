@@ -15,7 +15,8 @@
 #include "nvs_flash.h"
 #include "esp_event.h"
 #include "esp_netif.h"
-#include "protocol_examples_common.h"
+//#include "protocol_examples_common.h"
+#include "WifiConnect.h"
 
 #include "esp_log.h"
 #include "mqtt_client.h"
@@ -39,6 +40,9 @@
 #include "fsntp.h"
 #include "utility.h"
 #include "modbus.h"
+
+
+extern bool wifi_connect;
 
 #define GOOGLE_SNTP "time.google.com"
 #define DEFAULT_SNTP_SERVER GOOGLE_SNTP // Select one of the previous servers
@@ -173,7 +177,14 @@ esp_err_t mqtt_event_handler( esp_mqtt_event_handle_t event ) {
 		ESP_LOGW(TAG, "MQTT_EVENT_DISCONNECTED");
 		set_mqtt_service_state( MQTT_SERV_DISCONNECTED );
 
-		//mqtt_app_start( &mqttc, &mqttcfg );
+		if(wifi_connect == true)
+		{
+			mqtt_app_start( &mqttc, &mqttcfg );
+		}
+		else
+		{
+			esp_restart();
+		}
 
 
 
@@ -246,6 +257,11 @@ void mqtt_app_start_main(void)
 void ctrl_tsk(void) {
 
 	ESP_ERROR_CHECK(master_init());
+
+	while(wifi_connect == false)
+	{
+		vTaskDelay(200/portTICK_PERIOD_MS);
+	}
 
 	mqtt_app_start_main();
 
@@ -526,7 +542,7 @@ void app_main(void)
 	 * Read "Establishing Wi-Fi or Ethernet Connection" section in
 	 * examples/protocols/README.md for more information about this function.
 	 */
-	ESP_ERROR_CHECK(example_connect());
+	ESP_ERROR_CHECK(fisi_example_connect());
 
 
 	//***************************************************************************//

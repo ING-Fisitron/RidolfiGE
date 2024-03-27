@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "mqtt_ssl",
-    "project_version":    "1",
+    "project_version":    "950c86d-dirty",
     "project_path":       "C:/Users/Utente/Desktop/ESP32/RidolfiGE",
     "idf_path":           "C:/Espressif/esp-idf-v4.4.6",
     "build_dir":          "C:/Users/Utente/Desktop/ESP32/RidolfiGE/build",
@@ -848,7 +848,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Users/Utente/Desktop/ESP32/RidolfiGE/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/app_main.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/base64url.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/gcpjwt.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/mqtt.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/utility.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/fsntp.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/modbus.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/modbus_params.c" ],
+            "sources": [ "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/app_main.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/WifiConnect.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/base64url.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/gcpjwt.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/mqtt.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/utility.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/fsntp.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/modbus.c", "C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/modbus_params.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
