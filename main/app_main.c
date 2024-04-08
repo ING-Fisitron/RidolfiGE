@@ -377,7 +377,16 @@ void ctrl_tsk(void) {
 					"\"m\": \"_1_77\",\"v\": %d"// C_S
 					"},{"
 
-					"\"m\": \"_1_78\",\"v\": %d"// C_A
+					"\"m\": \"_1_78\",\"v\": %d"// C_S
+					"},{"
+
+					"\"m\": \"_1_82\",\"v\": %d"// C_S
+					"},{"
+
+					"\"m\": \"_1_83\",\"v\": %d"// C_S
+					"},{"
+
+					"\"m\": \"_1_84\",\"v\": %d"// C_A
 					"}]"
 
 
@@ -414,7 +423,10 @@ void ctrl_tsk(void) {
 					array_modbus[69],
 					array_modbus[76],
 					array_modbus[77],
-					array_modbus[78]
+					array_modbus[78],
+					array_modbus[82],
+					array_modbus[83],
+					array_modbus[84]
 			);
 
 			int ret = esp_mqtt_client_publish(mqttc,DATA_TOPIC,payload_char, strlen(payload_char), 1, 0);
@@ -422,7 +434,7 @@ void ctrl_tsk(void) {
 			ESP_LOGI(TAG, "START PUBLISH %d",ret);
 		}
 
-		vTaskDelay(60 * 1000/portTICK_PERIOD_MS);
+		vTaskDelay(10 * 1000/portTICK_PERIOD_MS);
 	} // task main cycle: end
 
 	vTaskDelete(NULL);

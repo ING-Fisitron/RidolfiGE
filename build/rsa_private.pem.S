@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/Utente/Desktop/ESP32/RidolfiGE/main/rsa_private.pem
+/* * Data converted from C:/Users/clott/PROGETTI/Ridolfi/RidolfiGE/main/rsa_private.pem
  * (null byte appended)
  */
 .data

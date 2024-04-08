@@ -80,7 +80,7 @@ enum {
 };
 
 
-#define NUM_REG 80
+#define NUM_REG 86
 
 // Example Data (Object) Dictionary for Modbus parameters:
 // The CID field in the table must be unique.
@@ -176,7 +176,7 @@ void request_modbus_info(void)
 
 			for(int i = 0;i<NUM_REG;i++)
 			{
-				ESP_LOGI(TAG, "[%d]", array_modbus[i]);
+				ESP_LOGI(TAG, "[REG %d][%d]",i, array_modbus[i]);
 			}
 
 
